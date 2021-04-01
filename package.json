@@ -31,13 +31,19 @@
   },
   "homepage": "https://github.com/homebridge-xiaomi-roborock-vacuum/homebridge-xiaomi-roborock-vacuum",
   "bin": {
-    "miio-vacuum": "./miio/cli/index.js"
+    "miio-vacuum": "dist/miio/cli/index.js"
   },
+  "main": "dist/index.js",
   "engines": {
     "node": ">=10.0.0",
     "homebridge": ">=0.4.45"
   },
   "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run build",
+    "postpublish": "npm run clean",
+    "lint": "prettier --check **/*.*",
     "lint:fix": "prettier --write **/*.*",
     "test": "jest"
   },
@@ -52,7 +58,13 @@
   },
   "optionalDependencies": {},
   "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "14.14.34",
+    "@types/semver": "^7.3.4",
+    "homebridge": "1.3.3",
     "jest": "26.6.3",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.2.3"
   }
 }

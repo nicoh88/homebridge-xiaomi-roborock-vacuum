@@ -47,7 +47,7 @@
     "debug": "4.3.1",
     "deep-equal": "2.0.5",
     "semver": "7.3.5",
-    "tinkerhub-discovery": "0.3.1",
+    "tinkerhub-discovery": "0.6.0",
     "yargs": "15.4.1"
   },
   "optionalDependencies": {},
